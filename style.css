@@ -54,6 +54,18 @@ h4 {
   padding: 10px;
   border-radius: 10px;
 }
+
+.mid div {
+  margin-top: 10px;
+  opacity: 0;
+  font-weight: 800;
+  padding: 10px;
+  background-color: #94c9a9;
+  color: #c6ecae;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
 .left,
 .right {
   border-radius: 20px;
@@ -85,6 +97,27 @@ h4 {
   }
 }
 
+/* -------------------------------------------------------------------------- */
+
+.mobileAnimate {
+  animation: rotateBounce1 200ms 2; /* 3 times */
+  display: inline-block; /* important */
+}
+
+@keyframes rotateBounce1 {
+  0% {
+    transform: scale(1) rotateY(0deg) translateY(0);
+  }
+
+  50% {
+    transform: scale(0.9) rotateY(180deg) translateY(0px);
+  }
+
+  100% {
+    transform: scale(1) rotateY(360deg) translateY(0);
+  }
+}
+
 .img-box {
   width: 100%;
 }
@@ -96,4 +129,59 @@ h4 {
   top: 4px;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 85%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    padding-top: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .left,
+  .right {
+    width: 200px;
+  }
+
+  .box {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  .img-box {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .img-box img {
+    width: 80%;
+    margin-top: 3rem;
+  }
+
+  .mid div {
+    margin-top: 1rem;
+    opacity: 1;
+    font-size: 1.2rem;
+    border: 2px solid #777da7;
+    transition: all 0.3s;
+  }
+
+  .mid div:active {
+    scale: 0.9;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
 }
